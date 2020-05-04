@@ -28,8 +28,8 @@ a {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgb(248, 60, 60);
-  border: 2px solid crimson;
+  background-color: rgb(202, 94, 94);
+  border-bottom: 2px solid black;
 }
 #navbar ul {
   display: flex;
@@ -43,6 +43,9 @@ a {
 #navbar a {
   display: block;
   padding: 2rem;
+}
+#navbar a:hover {
+  background-color: rgb(53, 95, 156);
 }
 
 #welcome-section {
@@ -62,13 +65,13 @@ a {
 #welcome-section p {
   margin: 0;
   font-style: italic;
-  color: red;
+  color: rgb(189, 27, 27);
   font-size: 2em;
   font-weight: 100;
 }
 
 #projects {
-  background-color: rgb(52, 132, 252);
+  background-color: rgb(53, 95, 156);
   padding: 1em;
   color: whitesmoke;
 }
@@ -86,6 +89,17 @@ a {
   display: inline-block;
   padding: 1.3em 0;
   font-size: 1.3em;
+  transition: all 0.5s ease;
+}
+#projects .project-tile .toggleCode {
+  color: transparent;
+}
+
+#projects .project-tile:hover .toggleCode {
+  color: orangered;
+}
+#projects .showAll:hover {
+  background-color: rgb(202, 94, 94);
 }
 #projects a[href='https://codepen.io/FreeCodeCamp/']
 {
@@ -125,7 +139,12 @@ a {
   align-items: flex-end;
   font-size: 1.5em;
   margin: 1em;
+  transition: transform 0.5s;
 }
+#contact a:hover {
+  transform: translateY(0.5em);
+}
+
 #contact svg {
   height: 75%;
   margin-right: 0.3em;
@@ -142,14 +161,44 @@ footer p {
 }
 footer svg {
   height: 50%;
-
   vertical-align: text-bottom;
-  /* width: 50%; */
 }
 
 @media only screen and (min-width: 600px) {
   #navbar ul {
     display: flex;
     justify-content: flex-end;
+  }
+}
+@media only screen and (min-width: 700px) {
+  img {
+    object-fit: cover;
+  }
+  #projects {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  #projects h2 {
+    width: 100%;
+  }
+  #projects .project-tile {
+    width: 45%;
+  }
+  #contact {
+    padding-top: 3em;
+  }
+  #contact ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  footer {
+    font-size: 1.2em;
+    display: flex;
+  }
+  footer p {
+    display: inline-block;
   }
 }
